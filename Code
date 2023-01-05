@@ -1,0 +1,28 @@
+<style>
+  form {
+    text-align: center;
+  }
+  iframe {
+    display: block;
+    margin: 0 auto;
+  }
+</style>
+
+<form>
+  <label for="embeds">Choisissez un lien embed</label><br>
+  <select id="embeds" name="embeds">
+    <option value="https://www.youtube.com/embed/dQw4w9WgXcQ">Video 1</option>
+    <option value="https://www.youtube.com/embed/JGwWNGJdvx8">Video 2</option>
+    <option value="https://www.youtube.com/embed/ZbZSe6N_BXs">Video 3</option>
+  </select>
+</form>
+
+<iframe id="video" width="640" height="300" src=""></iframe>
+
+<script>
+  var embeds = document.getElementById("embeds");
+  embeds.addEventListener("change", function() {
+    var video = document.getElementById("video");
+    video.src = embeds.value;
+  });
+</script>
